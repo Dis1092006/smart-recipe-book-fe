@@ -1,0 +1,7 @@
+<app-ingredient-edit/>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let ingredient of ingredients">
+    {{ ingredient.name }} ({{ ingredient.amount }} of {{ ingredient.measuringUnit }})
+  </li>
+</ul>
