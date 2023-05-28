@@ -11,4 +11,8 @@ export class IngredientListComponent {
     new Ingredient('Apples', 5, 'ea'),
     new Ingredient('Tomatoes', 10, 'ea'),
   ];
+
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }

@@ -2,22 +2,22 @@
   <div class="col-xs-12">
     <form>
       <div class="row">
-        <div class="col-xs-6 form-group">
+        <div class="col-sm-6 form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name">
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" #nameInput>
         </div>
-        <div class="col-xs-3 form-group">
+        <div class="col-sm-3 form-group">
           <label for="amount">Amount</label>
-          <input type="number" class="form-control" id="amount" placeholder="Enter Amount">
+          <input type="number" class="form-control" id="amount" placeholder="Enter Amount" #amountInput>
         </div>
-        <div class="col-xs-3 form-group">
+        <div class="col-sm-3 form-group">
           <label for="measuringUnit">Measuring Unit</label>
-          <input type="number" class="form-control" id="measuringUnit" placeholder="Enter Measuring Unit">
+          <input type="text" class="form-control" id="measuringUnit" placeholder="Enter Measuring Unit" #measuringUnitInput>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn btn-success" type="submit" (click)="onAddItem()">Add</button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
         </div>

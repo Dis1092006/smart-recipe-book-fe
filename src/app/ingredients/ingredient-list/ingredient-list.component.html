@@ -1,4 +1,4 @@
-<app-ingredient-edit/>
+<app-ingredient-edit (ingredientAdded)="onIngredientAdded($event)"/>
 <hr>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let ingredient of ingredients">
