@@ -1,7 +1,12 @@
 <app-ingredient-edit/>
 <hr>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let ingredient of ingredients">
+  <li
+    class="list-group-item"
+    [class.list-group-item-primary]="selectedIngredientIndex === i"
+    *ngFor="let ingredient of ingredients; let i = index"
+    (click)="onEditItem(i)"
+  >
     {{ ingredient.name }} ({{ ingredient.amount }} of {{ ingredient.measuringUnit }})
   </li>
 </ul>

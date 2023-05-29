@@ -6,6 +6,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { IngredientListComponent } from './ingredients/ingredient-list/ingredient-list.component';
 import { IngredientEditComponent } from './ingredients/ingredient-edit/ingredient-edit.component';
 import { IngredientService } from './ingredients/ingredient.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { IngredientService } from './ingredients/ingredient.service';
     IngredientEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [IngredientService],
   bootstrap: [AppComponent]
