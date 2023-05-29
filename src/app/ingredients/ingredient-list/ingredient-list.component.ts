@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Ingredient } from "../ingredient.model";
+import { Ingredient } from '../ingredient.model';
+import { IngredientService } from '../ingredient.service';
 
 @Component({
   selector: 'app-ingredient-list',
@@ -7,12 +8,17 @@ import { Ingredient } from "../ingredient.model";
   styleUrls: ['./ingredient-list.component.css']
 })
 export class IngredientListComponent {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5, 'ea'),
-    new Ingredient('Tomatoes', 10, 'ea'),
-  ];
+  ingredients: Ingredient[] = [];
 
-  onIngredientAdded(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+  constructor(private ingredientService: IngredientService) {
+  }
+
+  ngOnInit() {
+    this.ingredients = this.ingredientService.getIngredients();
+    this.ingredientService.ingredientsChanged.subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+      }
+    );
   }
 }
